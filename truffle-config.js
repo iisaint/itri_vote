@@ -1,6 +1,6 @@
 const path = require("path");
 const HDWalletProvider = require("truffle-hdwallet-provider");
-const mnemonic = "light decrease man laundry verb stock coil broken drop mimic lunch boy";
+const keys = require('./config/keys');
 
 module.exports = {
   // See <http://truffleframework.com/docs/advanced/configuration>
@@ -14,13 +14,13 @@ module.exports = {
     },
     ropsten: {
       provider: function() {
-        return new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/2a6ca69c7286498c9a5da50251cc131f");
+        return new HDWalletProvider(keys.mnemonic, keys.infura);
       },
       network_id: 3
     },
     rinkeby: {
       provider: function() {
-        return new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/2a6ca69c7286498c9a5da50251cc131f");
+        return new HDWalletProvider(keys.mnemonic, keys.infura);
       },
       network_id: 4
     }
